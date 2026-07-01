@@ -15,21 +15,6 @@
       "entrypoint": "src/index.ts"
     }
   },
-  "experimentalServices": {
-    "web": {
-      "root": "apps/web",
-      "framework": "nextjs"
-    },
-    "dashboard": {
-      "root": "apps/dashboard",
-      "framework": "nextjs"
-    },
-    "api": {
-      "root": "apps/api",
-      "framework": "express",
-      "entrypoint": "src/index.ts"
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
