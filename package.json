@@ -5,6 +5,8 @@
   "packageManager": "pnpm@11.7.0",
   "scripts": {
     "dev": "pnpm -r --parallel dev",
+    "dev:db": "docker compose -f docker-compose.local.yml up -d",
+    "dev:db:stop": "docker compose -f docker-compose.local.yml stop",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
