@@ -1,0 +1,22 @@
+{
+  "name": "linksformusic",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "prettier": "latest",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript": "latest",
+    "typescript-eslint": "latest"
+  }
+}
