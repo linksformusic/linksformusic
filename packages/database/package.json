@@ -1,0 +1,27 @@
+{
+  "name": "@linksformusic/database",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "studio": "drizzle-kit studio",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema/index.ts"
+  },
+  "dependencies": {
+    "drizzle-orm": "latest",
+    "pg": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/pg": "latest",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "latest",
+    "typescript": "latest"
+  }
+}

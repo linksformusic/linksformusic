@@ -27,16 +27,21 @@ Authorization: Bearer lfm_live_xxxxx
 Public route:
 
 - `GET /health`
+- `GET /api/auth/ok`
+
+Protected smoke-test route:
+
+- `GET /v1/me`
 
 ### Common Query Parameters
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `market` | string | `US` | ISO country code for regional catalog availability. |
-| `limit` | number | `10` | Result limit. Default `10`, max `50`. |
-| `offset` | number | `20` | Pagination offset. |
-| `type` | string | `track` | `track`, `album`, `artist`, or `all`. |
-| `include` | string | `metadata,availability` | Optional response expansions. |
+| Parameter | Type   | Example                 | Notes                                               |
+| --------- | ------ | ----------------------- | --------------------------------------------------- |
+| `market`  | string | `US`                    | ISO country code for regional catalog availability. |
+| `limit`   | number | `10`                    | Result limit. Default `10`, max `50`.               |
+| `offset`  | number | `20`                    | Pagination offset.                                  |
+| `type`    | string | `track`                 | `track`, `album`, `artist`, or `all`.               |
+| `include` | string | `metadata,availability` | Optional response expansions.                       |
 
 ### Common Error Shape
 
@@ -161,10 +166,7 @@ Example request:
 
 ```json
 {
-  "urls": [
-    "https://open.spotify.com/track/123",
-    "https://music.apple.com/us/album/after-hours/..."
-  ],
+  "urls": ["https://open.spotify.com/track/123", "https://music.apple.com/us/album/after-hours/..."],
   "market": "US",
   "services": ["spotify", "appleMusic", "deezer", "youtubeMusic"]
 }
@@ -242,13 +244,13 @@ What it does: searches tracks, albums, artists, or all music entities.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `q` | string | `blinding lights` | Required search term. |
-| `type` | string | `track` | `track`, `album`, `artist`, or `all`. |
-| `market` | string | `US` | Region-specific results. |
-| `limit` | number | `5` | Max result count. |
-| `offset` | number | `0` | Pagination offset. |
+| Parameter | Type   | Example           | Notes                                 |
+| --------- | ------ | ----------------- | ------------------------------------- |
+| `q`       | string | `blinding lights` | Required search term.                 |
+| `type`    | string | `track`           | `track`, `album`, `artist`, or `all`. |
+| `market`  | string | `US`              | Region-specific results.              |
+| `limit`   | number | `5`               | Max result count.                     |
+| `offset`  | number | `0`               | Pagination offset.                    |
 
 Example request:
 
@@ -287,12 +289,12 @@ What it does: fast autocomplete suggestions for client search UI.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `q` | string | `blind` | Required partial search term. |
-| `type` | string | `track` | Optional entity filter. |
-| `market` | string | `US` | Region-specific suggestions. |
-| `limit` | number | `8` | Default `8`, max `20`. |
+| Parameter | Type   | Example | Notes                         |
+| --------- | ------ | ------- | ----------------------------- |
+| `q`       | string | `blind` | Required partial search term. |
+| `type`    | string | `track` | Optional entity filter.       |
+| `market`  | string | `US`    | Region-specific suggestions.  |
+| `limit`   | number | `8`     | Default `8`, max `20`.        |
 
 Example request:
 
@@ -324,13 +326,13 @@ What it does: high-confidence lookup by title, artist, and optional album.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `title` | string | `Blinding Lights` | Required. |
-| `artist` | string | `The Weeknd` | Required. |
-| `album` | string | `After Hours` | Optional. |
-| `type` | string | `track` | `track` or `album`. |
-| `market` | string | `US` | Optional region. |
+| Parameter | Type   | Example           | Notes               |
+| --------- | ------ | ----------------- | ------------------- |
+| `title`   | string | `Blinding Lights` | Required.           |
+| `artist`  | string | `The Weeknd`      | Required.           |
+| `album`   | string | `After Hours`     | Optional.           |
+| `type`    | string | `track`           | `track` or `album`. |
+| `market`  | string | `US`              | Optional region.    |
 
 Example request:
 
@@ -419,9 +421,9 @@ What it does: finds track by ISRC and returns URLs across services.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `market` | string | `US` | Optional region filter. |
+| Parameter  | Type   | Example              | Notes                                    |
+| ---------- | ------ | -------------------- | ---------------------------------------- |
+| `market`   | string | `US`                 | Optional region filter.                  |
 | `services` | string | `spotify,appleMusic` | Optional comma-separated service filter. |
 
 Example request:
@@ -453,9 +455,9 @@ What it does: finds album by UPC/EAN and returns URLs across services.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `market` | string | `US` | Optional region filter. |
+| Parameter  | Type   | Example              | Notes                                    |
+| ---------- | ------ | -------------------- | ---------------------------------------- |
+| `market`   | string | `US`                 | Optional region filter.                  |
 | `services` | string | `spotify,appleMusic` | Optional comma-separated service filter. |
 
 Example request:
@@ -674,10 +676,10 @@ What it does: returns normalized track metadata.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `include` | string | `urls,availability` | Optional expansions. |
-| `market` | string | `US` | Optional region filter. |
+| Parameter | Type   | Example             | Notes                   |
+| --------- | ------ | ------------------- | ----------------------- |
+| `include` | string | `urls,availability` | Optional expansions.    |
+| `market`  | string | `US`                | Optional region filter. |
 
 Example request:
 
@@ -711,10 +713,10 @@ What it does: returns normalized album metadata.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `include` | string | `tracks,urls` | Optional expansions. |
-| `market` | string | `US` | Optional region filter. |
+| Parameter | Type   | Example       | Notes                   |
+| --------- | ------ | ------------- | ----------------------- |
+| `include` | string | `tracks,urls` | Optional expansions.    |
+| `market`  | string | `US`          | Optional region filter. |
 
 Example request:
 
@@ -780,9 +782,9 @@ What it does: returns normalized artist metadata.
 
 Query parameters:
 
-| Parameter | Type | Example | Notes |
-| --- | --- | --- | --- |
-| `include` | string | `urls` | Optional expansions. |
+| Parameter | Type   | Example | Notes                |
+| --------- | ------ | ------- | -------------------- |
+| `include` | string | `urls`  | Optional expansions. |
 
 Example request:
 

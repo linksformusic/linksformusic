@@ -11,7 +11,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@linksformusic/auth": "workspace:*",
     "@linksformusic/ui": "workspace:*",
+    "@next/env": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

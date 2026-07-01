@@ -11,9 +11,14 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@linksformusic/auth": "workspace:*",
+    "better-auth": "latest",
+    "cors": "latest",
+    "dotenv": "^17.4.2",
     "express": "latest"
   },
   "devDependencies": {
+    "@types/cors": "latest",
     "@types/express": "latest",
     "@types/node": "latest",
     "tsx": "latest",

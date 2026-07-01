@@ -1,0 +1,33 @@
+{
+  "name": "@linksformusic/auth",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    "./client": "./src/client.ts",
+    "./server": "./src/server.ts"
+  },
+  "dependencies": {
+    "@better-auth/api-key": "latest",
+    "@better-auth/drizzle-adapter": "latest",
+    "@linksformusic/database": "workspace:*",
+    "@polar-sh/better-auth": "latest",
+    "@polar-sh/sdk": "latest",
+    "better-auth": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}
